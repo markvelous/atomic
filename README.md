@@ -1,25 +1,47 @@
-# ATOMIC SWAP
+# REMARKABLE ATOMIC SWAP
 
-Mark Tan
+`SGBT4 PT7210027 Mark Tan, final assignment for Intermediate Blockchain module`
 
-## QUICKSTART
+_tl;dr_: Demonstration of a DEX enabled by atomic swaps for peer-to-peer, full custody crypto-swapping without fees and with minimum risks (sufficient locked time should be catered for first-in-last-out of initiator to avoid eleventh-minute foulplay)
 
+Demo execution on console
+## SETUP
+
+[Clone this repo](git clone https://github.com/markvelous/atomicswap)
+
+Install the dependencies:
 ```
 npm install truffle
-```
-
-Clone the repo
-
-```
 npm i 
 npm i @truffle/hdwallet-provider
 npm i @openzeppelin/contracts@3.4.0
 ```
 
-Create 2 sets of accounts on Metamask or at [vanity-eth](https://vanity-eth.tk/) for Ethereum & Binance 
+Create two sets of accounts for Kovan & Binance testnets on Metamask or at [vanity-eth](https://vanity-eth.tk/) 
 
+The Metamask setup for Binance Testnet is as follows:
+```
+Network Name: Smart Chain - Testnet
+New RPC URL: https://data-seed-prebsc-1-s1.binance.org:8545/
+ChainID: 97
+Symbol: BNB
+Block Explorer URL: https://testnet.bscscan.com
+```
+
+Ensure sufficient funds in both accounts using the respective faucets:
+
+[Binance Testnet](https://testnet.binance.org/faucet-smart)
+
+[Kovan Testnet](https://gitter.im/kovan-testnet/faucet)
+
+## LET'S DO ATOMIC SWAPS
+
+Deploy 
+
+```bash
 truffle migrate --reset --network kovan
 truffle migrate --reset --network binanceTestnet
+```
 
 // Checks accounts and HTLC on Binance testnet
 truffle console --network binanceTestnet
@@ -33,7 +55,7 @@ const htlc = await HTLC.deployed()
 // Alice initiates by withdrawing the fund
 await htlc.withdraw('remarkable', {from: addresses[0]})
 
-/// verify balance
+// Alice verifies balance
 const token = await Token.deployed()
 const balance = await token.balanceOf(addresses[0])
     balance.toString()
@@ -42,8 +64,6 @@ const balance = await token.balanceOf(addresses[0])
 truffle console --network kovan
 const addresses = await web3.eth.getAccounts()
     addresses
-
-// check HTLC
 const htlc = await HTLC.deployed()
     htlc.address
 
@@ -52,9 +72,9 @@ const mySecret = await htlc.secret()
     mySecret
 
 // Bob goes back to Kovan to unlock the fund
-await htlc.withdraw('remarkable', {from addresses[1]})
+await htlc.withdraw('remarkable', {from: addresses[1]})
 
-// verify that token was received
+// Bob verifies that token was received
 const token = await Token.deployed()
 const balance = await token.balanceOf(addresses[1])
     balance.toString()
