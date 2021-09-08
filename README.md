@@ -4,7 +4,7 @@
 
 _tl;dr_: Demonstration of a DEX enabled by atomic swaps for peer-to-peer, full custody crypto-swapping without fees and with minimum risks (sufficient locked time should be catered for first-in-last-out of initiator to avoid eleventh-minute foulplay)
 
-Demo execution on console
+> Demo is executed on console; no UI
 ## SETUP
 
 [Clone this repo](git clone https://github.com/markvelous/atomicswap)
@@ -36,45 +36,68 @@ Ensure sufficient funds in both accounts using the respective faucets:
 
 ## LET'S DO ATOMIC SWAPS
 
-Deploy 
+Let's assume Alice is on Kovan & Bob is on Binance
+
+>Alice initiates the atomic swaps with a secret; both deploy their contracts accordingly:
 
 ```bash
 truffle migrate --reset --network kovan
+
 truffle migrate --reset --network binanceTestnet
 ```
 
-// Checks accounts and HTLC on Binance testnet
+>Bob verifies the accounts and that his HTLC has been deployed on Binance
+```bash
 truffle console --network binanceTestnet
+
 const addresses = await web3.eth.getAccounts()
-    addresses
 
-// check HTLC
+addresses
+
 const htlc = await HTLC.deployed()
-    htlc.address
 
-// Alice initiates by withdrawing the fund
+htlc.address
+```
+
+>Bob withdraws the fund using the secret he has provided & verifies receipt of the fund
+```bash
 await htlc.withdraw('remarkable', {from: addresses[0]})
 
-// Alice verifies balance
 const token = await Token.deployed()
+
 const balance = await token.balanceOf(addresses[0])
-    balance.toString()
 
-// Checks accounts and HTLC on Binance testnet
+balance.toString()
+```
+
+>Alice verifies the accounts and HTLC on Kovan
+```
 truffle console --network kovan
+
 const addresses = await web3.eth.getAccounts()
-    addresses
+
+addresses
+
 const htlc = await HTLC.deployed()
-    htlc.address
 
-// Bob checks Binance for the secret
+htlc.address
+```
+
+>Once Bob has acted on the HTLC & revealed the secret, Alice can retrieve the secret from Binance ...
+```bash
 const mySecret = await htlc.secret()
-    mySecret
 
-// Bob goes back to Kovan to unlock the fund
+mySecret
+```
+>...to unlock her fund in Kovan
+```
 await htlc.withdraw('remarkable', {from: addresses[1]})
 
-// Bob verifies that token was received
 const token = await Token.deployed()
+
 const balance = await token.balanceOf(addresses[1])
-    balance.toString()
+
+balance.toString()
+```
+
+And the atomic swap is completed successfully between peers without an exchange!
