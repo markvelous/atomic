@@ -20,7 +20,7 @@ npm i @truffle/hdwallet-provider
 npm i @openzeppelin/contracts@3.4.0
 ```
 
-Create two sets of accounts for Kovan & Binance testnets on Metamask or at [vanity-eth](https://vanity-eth.tk/) 
+Create two sets of accounts for Kovan/Rinkeby & Binance testnets on Metamask (I prefer to use the testnets) or at [vanity-eth](https://vanity-eth.tk/) 
 
 The Metamask setup for Binance Testnet is as follows:
 ```
@@ -33,21 +33,20 @@ Block Explorer URL: https://testnet.bscscan.com
 
 Ensure sufficient funds in both accounts using the respective faucets:
 
-[Binance Testnet](https://testnet.binance.org/faucet-smart)
+[Binance faucet](https://testnet.binance.org/faucet-smart)
 
-[Kovan Testnet](https://gitter.im/kovan-testnet/faucet)
+[Kovan faucet](https://gitter.im/kovan-testnet/faucet)
 
+[Rinkeby faucet](https://faucet.rinkeby.io/)
 
 ## LET'S DO ATOMIC SWAPS
 
-Let's assume Alice is on Kovan (or Rinkeby, since Kovan is rather stingy with its KETH) & Bob is on Binance
+Let's assume Alice is on Kovan (or Rinkeby, since KETH comes in a trickle) & Bob is on Binance
 
 >Alice initiates the atomic swaps with a secret; both deploy their contracts accordingly:
 
 ```bash
-truffle migrate --reset --network kovan
-
-truffle migrate --network kovan --skipDryRun (if there is a callback error)
+truffle migrate --reset --network kovan   //add --skipDryRun to the end if there is a callback error
 
 truffle migrate --reset --network binanceTestnet
 ```
