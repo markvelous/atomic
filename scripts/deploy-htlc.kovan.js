@@ -6,7 +6,7 @@ module.exports = async callback => {
   const htlc = await HTLC.new(
     alice,
     tokenA.address,
-    1,
+    0.01,
     {from: bob}
   );
   console.log(htlc.address);

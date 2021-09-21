@@ -5,6 +5,9 @@
 _tl;dr_: Demonstration of a DEX enabled by atomic swaps for peer-to-peer, full custody crypto-swapping without fees and with minimum risks (sufficient locked time should be catered for first-in-last-out of initiator to avoid eleventh-minute foulplay)
 
 > Demo is executed on console; no UI
+
+![](./screen.png)
+
 ## SETUP
 
 [Clone this repo](git clone https://github.com/markvelous/atomicswap)
@@ -100,4 +103,4 @@ const balance = await token.balanceOf(addresses[1])
 balance.toString()
 ```
 
-And the atomic swap is completed successfully between peers without an exchange!
+And the atomic swap is completed remarkably between peers without an exchange!

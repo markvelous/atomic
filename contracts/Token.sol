@@ -11,6 +11,6 @@ contract Token is ERC20 {
   ) 
     ERC20(name, ticker) 
   {
-    _mint(msg.sender, 1);
+    _mint(msg.sender, 100);
   }
 }
