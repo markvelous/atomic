@@ -40,15 +40,14 @@ Ensure sufficient funds in both accounts using the respective faucets:
 
 ## LET'S DO ATOMIC SWAPS
 
-Let's assume Alice is on Kovan & Bob is on Binance
+Let's assume Alice is on Kovan (or Rinkeby, since Kovan is rather stingy with its KETH) & Bob is on Binance
 
 >Alice initiates the atomic swaps with a secret; both deploy their contracts accordingly:
 
 ```bash
-truffle migrate --reset --network kovan (for Kovan testnet)
-truffle migrate --reset --network rinkeby (for Rinkeby testnet)
+truffle migrate --reset --network kovan
 
-truffle migrate --network rinkeby --skipDryRun (if there is a callback error)
+truffle migrate --network kovan --skipDryRun (if there is a callback error)
 
 truffle migrate --reset --network binanceTestnet
 ```
