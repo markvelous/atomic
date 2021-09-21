@@ -1,8 +1,6 @@
-// SPDX-License-Identifier: UNLICENSED
-
 pragma solidity ^0.7.4;
 
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import '@openzeppelin/contracts/token/ERC20/ERC20.sol';
 
 contract Token is ERC20 {
   constructor(
@@ -11,6 +9,6 @@ contract Token is ERC20 {
   ) 
     ERC20(name, ticker) 
   {
-    _mint(msg.sender, 100);
+    _mint(msg.sender, 10);
   }
 }

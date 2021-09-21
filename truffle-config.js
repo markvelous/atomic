@@ -8,6 +8,14 @@ const kovanProvider = new HDWalletProvider({
   providerOrUrl: "https://kovan.infura.io/v3/618b25aa58eb434f867378c386f3f44c",
 });
 
+// const rinkebyProvider = new HDWalletProvider({
+//   privateKeys: [
+//     "3df07655552fc81200559af0f62df6665081909752dd1c49da7bdf3b6dbb02d8",
+//     "2b118472f020523d5cb1ef8d6efcbfff84445c44d71ddb21cc7430d667c1dc5b",
+//   ],
+//   providerOrUrl: "https://rinkeby.infura.io/v3/618b25aa58eb434f867378c386f3f44c",
+// });
+
 const binanceProvider = new HDWalletProvider({
   privateKeys: [
     "3df07655552fc81200559af0f62df6665081909752dd1c49da7bdf3b6dbb02d8",
@@ -53,6 +61,12 @@ module.exports = {
    */
 
   networks: {
+    rinkeby: {
+//    provider: () => new HDWalletProvider(mnemonic, projectId),
+      provider: () => rinkebyProvider,
+      network_id: 4,
+      gas: 4500000,
+    },
     kovan: {
       provider: () => kovanProvider,
       network_id: "42",
