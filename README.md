@@ -6,7 +6,7 @@ _tl;dr_: Demonstration of a DEX enabled by atomic swaps for peer-to-peer, full c
 
 > Demo is executed on console; no UI
 
-![](./screen.png)
+![](screen.png)
 
 ## SETUP
 
