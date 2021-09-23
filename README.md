@@ -10,7 +10,10 @@ _tl;dr_: Demonstration of a DEX enabled by atomic swaps for peer-to-peer, full c
 
 ## SETUP
 
-[Clone this repo](https://github.com/markvelous/atomicswap)
+Clone this repo 
+
+Or clone the Kovan branch if you are using KETH
+`git clone --branch kovan https://github.com/markvelous/atomicswap atomickovan`
 
 Install the dependencies:
 ```
@@ -41,7 +44,7 @@ Ensure sufficient funds in both accounts using the respective faucets:
 
 ## LET'S DO ATOMIC SWAPS
 
-Let's assume Alice is on Kovan (or Rinkeby, since KETH comes in a trickle) & Bob is on Binance
+Let's assume Alice is on Rinkeby (or Kovan, although KETH comes in a trickle) & Bob is on Binance
 
 >Alice initiates the atomic swaps with a secret; both deploy their contracts accordingly:
 
