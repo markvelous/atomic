@@ -10,7 +10,7 @@ _tl;dr_: Demonstration of a DEX enabled by atomic swaps for peer-to-peer, full c
 
 ## SETUP
 
-[Clone this repo](git clone https://github.com/markvelous/atomicswap)
+[Clone this repo](https://github.com/markvelous/atomicswap)
 
 Install the dependencies:
 ```
