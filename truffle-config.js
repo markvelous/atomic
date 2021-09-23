@@ -1,6 +1,6 @@
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 
-const rinkebyProvider = new HDWalletProvider({
+const kovanProvider = new HDWalletProvider({
   privateKeys: [
     "[key]", // replace with yout own keys
     "[key]", // replace with yout own keys
