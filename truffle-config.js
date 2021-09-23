@@ -1,6 +1,6 @@
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 
-const rinkebyProvider = new HDWalletProvider({
+const kovanProvider = new HDWalletProvider({
   privateKeys: 
     "[key]",
     "[key]",
@@ -53,12 +53,7 @@ module.exports = {
    */
 
   networks: {
-    rinkeby: {
-      provider: () => rinkebyProvider,
-      network_id: 4,
-      gas: 4500000,
-    },
-    kovan: {
+     kovan: {
       provider: () => kovanProvider,
       network_id: "42",
       gas: 5000000,
