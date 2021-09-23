@@ -4,7 +4,7 @@ const HTLC = artifacts.require('HTLC.sol');
 module.exports = async function (deployer, network, addresses) {
   const [bob, alice] = addresses;      
 
-  if(network === 'kovan') {
+  if(network === 'rinkeby') {
     await deployer.deploy(Token, 'Token A', 'TKNA', {from:  bob});
     const tokenA = await Token.deployed();
     await deployer.deploy(HTLC, alice, tokenA.address, 1, {from: bob});

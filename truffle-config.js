@@ -8,10 +8,18 @@ const kovanProvider = new HDWalletProvider({
   providerOrUrl: "https://rinkeby.infura.io/v3/618b25aa58eb434f867378c386f3f44c",
 });
 
+const rinkebyProvider = new HDWalletProvider({
+  privateKeys: [
+    "[key]", // replace with yout own keys
+    "[key]", // replace with yout own keys
+  ],
+  providerOrUrl: "https://rinkeby.infura.io/v3/618b25aa58eb434f867378c386f3f44c",
+});
+
 const binanceProvider = new HDWalletProvider({
   privateKeys: [
-    "[key]",
-    "[key]",
+    "[key]", // replace with yout own keys
+    "[key]", // replace with yout own keys
   ],
   providerOrUrl: "https://data-seed-prebsc-1-s1.binance.org:8545/",
 });
