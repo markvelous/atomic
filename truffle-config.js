@@ -2,24 +2,16 @@ const HDWalletProvider = require("@truffle/hdwallet-provider");
 
 const kovanProvider = new HDWalletProvider({
   privateKeys: [
-    "3df07655552fc81200559af0f62df6665081909752dd1c49da7bdf3b6dbb02d8",
-    "2b118472f020523d5cb1ef8d6efcbfff84445c44d71ddb21cc7430d667c1dc5b",
+    "[key]", // replace with yout own keys
+    "[key]", // replace with yout own keys
   ],
-  providerOrUrl: "https://kovan.infura.io/v3/618b25aa58eb434f867378c386f3f44c",
+  providerOrUrl: "https://rinkeby.infura.io/v3/618b25aa58eb434f867378c386f3f44c",
 });
-
-// const rinkebyProvider = new HDWalletProvider({
-//   privateKeys: [
-//     "3df07655552fc81200559af0f62df6665081909752dd1c49da7bdf3b6dbb02d8",
-//     "2b118472f020523d5cb1ef8d6efcbfff84445c44d71ddb21cc7430d667c1dc5b",
-//   ],
-//   providerOrUrl: "https://rinkeby.infura.io/v3/618b25aa58eb434f867378c386f3f44c",
-// });
 
 const binanceProvider = new HDWalletProvider({
   privateKeys: [
-    "3df07655552fc81200559af0f62df6665081909752dd1c49da7bdf3b6dbb02d8",
-    "2b118472f020523d5cb1ef8d6efcbfff84445c44d71ddb21cc7430d667c1dc5b",
+    "[key]",
+    "[key]",
   ],
   providerOrUrl: "https://data-seed-prebsc-1-s1.binance.org:8545/",
 });
