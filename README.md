@@ -12,9 +12,7 @@ _tl;dr_: Demonstration of a DEX enabled by atomic swaps for peer-to-peer, full c
 
 >Clone this repo (for Rinkeby) 
 
->Or the 'kovan' branch, which contains the original codes for Kovan/Binance deployment
-
-Or clone the Kovan branch if you are using KETH
+> Or clone the Kovan branch if you are using KETH
 `git clone --branch kovan https://github.com/markvelous/atomicswap atomickovan`
 
 Install the dependencies:
