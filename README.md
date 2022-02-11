@@ -1,7 +1,5 @@
 # REMARKABLE ATOMIC SWAP
 
-`SGBT4 PT7210027 Mark Tan, final assignment for Intermediate Blockchain module`
-
 _tl;dr_: Demonstration of a DEX enabled by atomic swaps for peer-to-peer, full custody crypto-swapping without fees and with minimum risks (sufficient locked time should be catered for first-in-last-out of initiator to avoid eleventh-minute foulplay)
 
 > Demo is executed on console; no UI (the local folder is atom2, as shown in the screencap below)
